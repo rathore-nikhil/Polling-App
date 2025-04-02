@@ -26,6 +26,14 @@ PollingApp is a project built with Spring Boot and Angular that allows users to 
 - MySQL Database
 - Node.js and npm (for Angular)
 
+### Screenshots 
+
+#### Create Poll
+![image](https://github.com/user-attachments/assets/dcdd1316-aa61-47b3-be05-2ec1f700d5ab)
+#### Available Polls
+![image](https://github.com/user-attachments/assets/7b00e892-1661-438b-b56e-d25a3cae3ab9)
+
+
 ### Installation
 
 1. Clone the repository:
