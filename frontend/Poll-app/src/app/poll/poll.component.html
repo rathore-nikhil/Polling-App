@@ -1,0 +1,146 @@
+<div class="container">
+    <h2 class="heading">Create Poll</h2>
+    
+    <div class="input-container">
+        <input
+            [(ngModel)]="newPoll.question"
+            placeholder="Poll Question"   
+            class="input-field"
+            required     
+        />
+    </div>
+
+    <div class="options-container">
+        <div *ngFor="let option of newPoll.options; let i = index; trackBy: trackByIndex" class="option-group">
+            <input
+                [(ngModel)]="option.optionText"
+                placeholder="Option"   
+                class="input-field"
+                required  
+            />
+            <button *ngIf="newPoll.options.length > 2" 
+                (click)="removeOption(i)"
+                class="remove-button">
+                Remove
+            </button>
+        </div>
+    </div>
+
+    <button (click)="addOption()" class="primary-button">Add Another Poll</button>
+    <button (click)="createPoll()" class="primary-button">Create Poll</button>
+
+    <h2 class="heading">Available Polls</h2>
+    <div class="polls-list">
+        <div *ngFor="let poll of polls" class="poll-container">
+            <h3>{{ poll.question }}</h3>
+            <div class="option-list">
+                <div *ngFor="let option of poll.options; let i = index">
+                    <button (click)="vote(poll.id, i)" class="poll-button">
+                        {{ option.optionText }} ({{ option.voteCount }} votes)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Container */
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Headings */
+.heading {
+    text-align: center;
+    margin-top: 16px;
+}
+
+/* Input Fields */
+.input-container, .options-container {
+    margin-bottom: 16px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Option Group */
+.option-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+/* Remove Button */
+.remove-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.remove-button:hover {
+    background-color: darkred;
+}
+
+/* Primary Buttons */
+.primary-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.primary-button:hover {
+    background-color: #0056b3;
+}
+
+/* Poll Container */
+.poll-container {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+/* Option List */
+.option-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Poll Button */
+.poll-button {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+.poll-button:hover {
+    background-color: #007bff;
+    color: white;
+}
+</style>
