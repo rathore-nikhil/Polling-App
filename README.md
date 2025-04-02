@@ -2,7 +2,7 @@
 
 ## Overview
 
-PollingApp is a project built with Spring Boot and Angular that allows users to create and participate in polls. The application provides a RESTful API for managing polls and votes, making it easy to integrate with the Angular frontend.
+PollingApp is a full stack project built with Spring Boot and Angular that allows users to create and participate in polls. The application provides a RESTful API for managing polls and votes, making it easy to integrate with the Angular frontend.
 
 ## Features
 
