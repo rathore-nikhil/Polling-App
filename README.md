@@ -9,7 +9,6 @@ PollingApp is a project built with Spring Boot and Angular that allows users to 
 - Create polls with multiple options
 - Vote on existing polls
 - Retrieve all polls and specific poll details
-- Cross-origin resource sharing (CORS) support for frontend integration
 
 ## Technologies Used
 
